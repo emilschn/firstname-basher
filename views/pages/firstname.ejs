@@ -16,7 +16,7 @@
 <ul id="slides">
 	<% reasons.forEach(function(reason, index){ %>
 		<li class="slide<% if (index == 0){ %> showing<%}%>">
-			<p><%= reason %></p>
+			<p><% if (reason.indexOf('http') != -1) { %><a href="<%= reason %>" target="_blank"><%= reason %></a><% }else{ %><%= reason %><% } %></p>
 			<% if(reasons.length > 1){%>
 				<p class="commande mt-sm">
 					<a href="#" class="c-prev nodeco" onclick="prevSlide()"> &lsaquo; </a>
