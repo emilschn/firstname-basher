@@ -31,12 +31,13 @@ h1, #slides li{
     font-weight: normal;
     margin: 
 }
-/*h1, #slides li{
-    font-size:24px;
-    font-size:2.4rem;
-    font-weight: normal;
-    margin: 
-}*/
+#search {
+    border: 2px solid #fff;
+    border-radius: 30px;
+    margin: 0 auto 80px;
+    padding: 10px;
+    width: 240px;
+}
 
 #logo {margin: 40px 0;}
 
@@ -76,9 +77,11 @@ input[type="radio"], #wishlist img{vertical-align: middle;}
 }
 
 .button-submit, input[type="text"] {
+    background: none;
     border: medium none;
-    padding: 10px 15px;
+    padding: 0;
 }
+
 
 a.c-next, a.c-prev {padding: 10px}
 
@@ -87,11 +90,10 @@ a.c-next, a.c-prev {padding: 10px}
 .mt-lg {margin: 0 0 80px 0}
 
 .button-submit{
-    background-color: #222;
+    background:none;
     color:#fff;
     cursor:pointer;
 }
-.button-submit:hover {background-color: #444;}
 
 #firstname, a.c-prev, a.c-next {font-family: "Times New Roman, Serif";}
 
