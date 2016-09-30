@@ -42,14 +42,24 @@ exports.search = function(req, res) {
 	
 	//Recherche de prénom
 	var prenomRecherche = req.param('prenom');
-	if (prenomRecherche != undefined && prenomRecherche != "") {
-		prenomRecherche = prenomRecherche.split(" ").join("-");
-		prenomRecherche = prenomRecherche.charAt(0).toUpperCase() + prenomRecherche.slice(1);
-		if (prenomRecherche.indexOf("-") > -1) {
-			var aSplit = prenomRecherche.split("-");
-			aSplit[1] = aSplit[1].charAt(0).toUpperCase() + aSplit[1].slice(1);
-			prenomRecherche = aSplit.join("-");
+	if (prenomRecherche != undefined) {
+		if (prenomRecherche != "") {
+			prenomRecherche = prenomRecherche.split(" ").join("-");
+			prenomRecherche = prenomRecherche.charAt(0).toUpperCase() + prenomRecherche.slice(1);
+			if (prenomRecherche.indexOf("-") > -1) {
+				var aSplit = prenomRecherche.split("-");
+				aSplit[1] = aSplit[1].charAt(0).toUpperCase() + aSplit[1].slice(1);
+				prenomRecherche = aSplit.join("-");
+			}
+			
+		} else {
+			prenomRecherche = req.param('fallback');
+			if (prenomRecherche == undefined) {
+				prenomRecherche = "";
+			}
 		}
+		
+		
 		console.log("redirect to : " + prenomRecherche);
 		res.redirect('/' + prenomRecherche);
 	}
