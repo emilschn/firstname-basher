@@ -36,7 +36,7 @@ h1, #slides li{
     border-radius: 30px;
     margin: 0 auto 80px;
     padding: 10px;
-    width: 240px;
+    width: 216px; 
 }
 
 #logo {margin: 40px 0;}
@@ -80,6 +80,10 @@ input[type="radio"], #wishlist img{vertical-align: middle;}
     background: none;
     border: medium none;
     padding: 0;
+}
+
+input[type="text"] {
+     width: 180px;
 }
 
 
