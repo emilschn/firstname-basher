@@ -21,7 +21,7 @@ ul {list-style-type: none}
 a.c-next,a.c-prev,
 input[type=text],
 .button-submit,
-button#btn-add-wl {
+button#btn-add-wl, h2 {
     font-size:16px;
     font-size:1.6rem;
 }
@@ -61,12 +61,23 @@ a.disabled {cursor:default;}
     margin: 0 auto 40px auto;
     width: 200px;
 }
-input[type="radio"] {margin: 0 0 5px 5px}
+input[type="radio"] { margin: 0 10px 5px 20px;}
 input[type="radio"], #wishlist img{vertical-align: middle;}
-#wishlist, #firstname, a#btn-add-wl, #ul-wl li a {color: #222;}
-input[type=text], .button-submit {
-    padding:10px 30px;
-    border:none;
+#wishlist, #firstname, a#btn-add-wl, #ul-wl li a, .black, h2 {color: #222;}
+.ml {
+    margin: 40px auto;
+    max-width: 640px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.ml p, .ml h2{
+    padding: 0 0 20px 0 ;
+}
+
+.button-submit, input[type="text"] {
+    border: medium none;
+    padding: 10px 15px;
 }
 
 a.c-next, a.c-prev {padding: 10px}
@@ -261,8 +272,8 @@ footer, .commande, .social-btn{
 
 label {
     display: block;
-    padding: 10px 0 0 45px;
-    text-align: left;
+    padding: 10px 0 10px 20px;
+    text-align: left; 
 }
 
 /* Add Animation */
