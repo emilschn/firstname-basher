@@ -1,0 +1,43 @@
+{
+	"name": "firstname-basher",
+	"version": "0.0.1",
+	"author": "pivert",
+	"description": "First name basher",
+	"dependencies": {
+		"compression": "latest",
+		"express": "~4.14",
+		"express-minify-html":"latest",
+		"ejs": "~2.5",
+		"mongoose": "~4.6",
+		"passport": "0.3.2",
+		"passport-local": "1.0",
+		"bcrypt-nodejs" : "latest",
+		
+		"body-parser": "^1.15.2",
+		"cookie-parser": "^1.4.3",
+		
+		"async": "latest",
+		"node-cron": "latest",
+		
+		"googleapis": "latest",
+		"google-auth-library": "latest",
+
+	    "bower": "^1.7.9",
+	    "gulp": "^3.9.1",
+	    "gulp-autoprefixer": "^3.1.0",
+	    "gulp-concat": "^2.6.0",
+	    "gulp-copy": "0.0.2",
+	    "gulp-csso": "^2.0.0",
+	    "gulp-jshint": "^2.0.1",
+	    "gulp-notify": "^2.2.0",
+	    "gulp-order": "^1.1.1",
+	    "gulp-plumber": "^1.1.0",
+	    "gulp-rename": "^1.2.2",
+	    "gulp-strip-css-comments": "^1.2.0",
+	    "gulp-uglify": "^2.0.0",
+	    "gulp-util": "^3.0.7",
+	    "jshint": "^2.9.2",
+
+	    "universal-analytics":"latest"
+	}
+}

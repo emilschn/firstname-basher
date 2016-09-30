@@ -1,0 +1,80 @@
+<% include ../partials/header %>
+
+<% if (reasons == undefined) { %>
+<p>
+	Nous n'avons pas encore de préjugés sur le prénom <%= firstname %>.<br />
+	Mais sachez que les personnes qui le portent sont souvent méprisables !
+</p>
+
+<p>
+	<a href="/" class="button">TROUVER UN AUTRE PRENOM</a>
+</p>
+<% } else { %>
+
+<h1>Je ne peux malheureusement pas appeler mon enfant</h1>
+<p id="firstname"><%= firstname %></p>
+<ul id="slides">
+	<% reasons.forEach(function(reason, index){ %>
+		<li class="slide<% if (index == 0){ %> showing<%}%>">
+			<p><%= reason %></p>
+			<% if(reasons.length > 1){%>
+				<p class="commande mt-sm">
+					<a href="#" class="c-prev nodeco" onclick="prevSlide()"> &lsaquo; </a>
+					<%= index+1 %> / <%= reasons.length %>
+					<a href="#" class="c-next nodeco" onclick="nextSlide()"> &rsaquo; </a>
+				</p>
+			<%}%>
+		</li>
+	<% }) %>
+</ul>
+<p class="mt-md">
+	<a href="/" class="button nodeco">TROUVER UN AUTRE PRENOM</a>
+</p>
+
+<p class="mt-md">
+	<% if (alreadylisted){ %>
+	<a href="#" id="btn-add-wl" class="disabled">Ce prénom est déjà dans ma liste</a>
+	<% }else{ %>
+	<a href="#" id="btn-add-wl">Ajouter tout de même ce prénom à ma liste</a>
+	<% } %>
+</p>
+
+<p class="mt-lg">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=<%= req.protocol + '://' + req.get('host') + req.originalUrl %>" class="social-btn nodeco" target="_blank"><span>f</span>Partager sur facebook</a>
+</p>
+
+<% } %>
+
+<form id="filter" class="mt-md" method="post" action="/">
+	Afficher les prénoms : 
+		<label><input type="radio" name="sex" value="" <% if (cookiesex != "M" || cookiesex != "F") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Indifférent</label>
+		<label><input type="radio" name="sex" value="F" <% if (cookiesex == "F") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Féminins</label>
+		<label><input type="radio" name="sex" value="M" <% if (cookiesex == "M") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Masculins</label>
+</form><!-- enregistrer dans un cookie le genre pour sauvegarder le choix-->
+
+<p class="mt-md">
+	<a id="wishlist" title="Ouvrir ma liste de prénoms" href="#">Ma liste de prénoms (<span id="wl-nb"><%= wishlist.length %></span>)</a>
+</p>
+<form method="post" action="/" id="search" class="mt-lg">
+ 	<input type="text" name="prenom" placeholder="Rechercher un prénom" /><button type="submit" class="button-submit">OK</button>
+ </form>
+<!-- Modal content -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+    		<span title="Fermer" class="close">×</span>
+    		
+    		<p>Ma liste de prénoms</p>
+  		</div>
+  		<div class="modal-body">
+			<ul id="ul-wl">
+				<% wishlist.forEach(function(wishlistItem, index){ %>
+				<li><a href="/<%= wishlistItem %>"><%= wishlistItem %></a> <button>Supprimer</button></li>
+				<% }) %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>

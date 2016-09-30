@@ -1,0 +1,6 @@
+diff a/firstname-basher.js b/firstname-basher.js	(rejected hunks)
+@@ -2,3 +3,4 @@
++var compression = require('compression');
+ var express = require('express'),
+     app = express(),
+ //    mongoose = require('mongoose'),
