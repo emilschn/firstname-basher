@@ -14,7 +14,7 @@ exports.execute = function(req, res){
 		aRandom.push(firstname);
 	}
 	var nRandom = -1;
-	if (sFilteredSex != "" && sFilteredSex != undefined) {
+	if (sFilteredSex != undefined && (sFilteredSex == "M" || sFilteredSex == "F")) {
 		while (nRandom < 0) {
 			var nTest = Math.floor((Math.random() * aRandom.length));
 			if (aRandom[nTest].sex.indexOf(sFilteredSex) != -1) {
