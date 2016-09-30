@@ -287,12 +287,18 @@ label {
     to {top: 0; opacity: 1}
 }
 
+#filter label:first-child {
+    margin: 16px 0 0 0;
+}
+
 @media (min-width: 640px) {
   #filter {
       margin: 0 0 40px 0;
       width: 100%;
+  } 
+  #filter label:first-child {
+      margin: 0;
   }
-
   label {
       padding: 0 0 0 10px;
       display: inline;
