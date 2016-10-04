@@ -9,14 +9,14 @@ var express = require('express'),
 var minifyHTML = require('express-minify-html');
 
 
-app.all(/.*/, function(req, res, next) {
-  var host = req.header("host");
-  if (host.match(/^www\..*/i)) {
-    next();
+//app.all(/.*/, function(req, res, next) {
+//  var host = req.header("host");
+//  if (host.match(/^www\..*/i)) {
+/*    next();
   } else {
     res.redirect(301, "http://www." + host);
   }
-});
+});*/
 
 
 var ua = require('universal-analytics');
