@@ -21,22 +21,23 @@ ul {list-style-type: none}
 a.c-next,a.c-prev,
 input[type=text],
 .button-submit,
-button#btn-add-wl, h2 {
+button#btn-add-wl, h2, #slides li, h1, .like-h1 {
     font-size:16px;
     font-size:1.6rem;
-}
-h1, #slides li{
-    font-size:20px;
-    font-size:2rem;
     font-weight: normal;
-    margin: 
 }
+
 #search {
     border: 2px solid #fff;
-    border-radius: 30px;
     margin: 0 auto 80px;
     padding: 10px;
     width: 216px; 
+}
+
+#search, .bouton {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
 }
 
 #logo {margin: 40px 0;}
@@ -83,15 +84,21 @@ input[type="radio"], #wishlist img{vertical-align: middle;}
 }
 
 input[type="text"] {
-     width: 180px;
+     width: 170px;
+}
+
+.button-submit {
+    margin: 0 0 0 10px;
+    text-align: right;
+    width: 30px;
 }
 
 
 a.c-next, a.c-prev {padding: 10px}
 
 .mt-sm {margin: 20px 0 0 0}
-.mt-md {margin: 0 0 40px 0}
-.mt-lg {margin: 0 0 80px 0}
+.mb-md {margin: 0 0 40px 0}
+.mb-lg {margin: 0 0 80px 0}
 
 .button-submit{
     background:none;
@@ -107,13 +114,10 @@ a.c-next, a.c-prev {padding: 10px}
     margin: 40px 0 36px 0;
 }
 
-.button {
+.bouton {
     background-color: #f2af91;
     display: inline-block;
     margin: 0 0 5px 0;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
     padding:20px 30px;
     -moz-box-shadow: 0px 5px 0px 0px #ae7d67;
     -webkit-box-shadow: 0px 5px 0px 0px #ae7d67;
@@ -125,7 +129,7 @@ a.c-next, a.c-prev {padding: 10px}
     cursor:pointer;
 }
 
-.button:hover {
+.bouton:hover {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     -o-box-shadow: none;
@@ -268,7 +272,8 @@ footer, .commande, .social-btn{
     background-color: #fff;
     margin: auto;
     padding: 0;
-    width: 640px;
+    max-width: 640px;
+    width: 95%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -310,6 +315,12 @@ label {
       display: inline;
       text-align: left;
   }
+
+  #slides li, h1, .like-h1{
+    font-size:20px;
+    font-size:2rem;
+    font-weight: normal;
+}
 }
 
 ::-webkit-input-placeholder { 

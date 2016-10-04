@@ -2,12 +2,13 @@
 
 <% if (reasons == undefined) { %>
 <p>
-	<h1 class="mt-md">Nous n'avons pas encore de préjugés sur le prénom <%= firstname %>.<br />
-	Mais sachez que les personnes qui le portent sont souvent méprisables !</h1>
+	<h1>Nous n'avons pas encore de préjugés sur le prénom</h1>
+	<p id="firstname"><%= firstname %></p>
+	<p class="like-h1 mb-lg">Mais sachez que les personnes qui le portent sont souvent méprisables.</p>
 </p>
 
-<p class="mt-md">
-	<a class="button nodeco" href="/">TROUVER UN AUTRE PRENOM</a>
+<p class="mb-lg">
+	<a class="bouton nodeco" href="/">TROUVER UN AUTRE PRENOM</a>
 </p>
 <% } else { %>
 
@@ -27,11 +28,11 @@
 		</li>
 	<% }) %>
 </ul>
-<p class="mt-md">
-	<a href="/" class="button nodeco">TROUVER UN AUTRE PRENOM</a>
+<p class="mb-md">
+	<a href="/" class="bouton nodeco">TROUVER UN AUTRE PRENOM</a>
 </p>
 
-<p class="mt-md">
+<p class="mb-md">
 	<% if (alreadylisted){ %>
 	<a href="#" id="btn-add-wl" class="disabled">Ce prénom est déjà dans ma liste</a>
 	<% }else{ %>
@@ -39,20 +40,20 @@
 	<% } %>
 </p>
 
-<p class="mt-lg">
+<p class="mb-lg">
 	<a href="https://www.facebook.com/sharer/sharer.php?u=<%= req.protocol + '://' + req.get('host') + req.originalUrl %>" class="social-btn nodeco" target="_blank"><span>f</span>Partager sur facebook</a>
 </p>
 
 <% } %>
 
-<form id="filter" class="mt-md" method="post" action="/">
+<form id="filter" class="mb-md" method="post" action="/">
 	Afficher les prénoms : 
 		<label><input type="radio" name="sex" value="" <% if (cookiesex != "M" || cookiesex != "F") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Indifférent</label>
 		<label><input type="radio" name="sex" value="F" <% if (cookiesex == "F") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Féminins</label>
 		<label><input type="radio" name="sex" value="M" <% if (cookiesex == "M") { %>checked="checked"<% } %> onchange="document.getElementById('filter').submit();"> Masculins</label>
 </form><!-- enregistrer dans un cookie le genre pour sauvegarder le choix-->
 
-<p class="mt-md">
+<p class="mb-md">
 	<a id="wishlist" title="Ouvrir ma liste de prénoms" href="#">Ma liste de prénoms (<span id="wl-nb"><%= wishlist.length %></span>)</a>
 </p>
 <form method="post" action="/" id="search">
