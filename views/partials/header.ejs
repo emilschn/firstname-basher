@@ -17,7 +17,7 @@
         <% } %>
         <meta property="og:url" content="<%= req.protocol + '://' + req.get('host') +'/'+ firstname %>">
         <meta property="og:site_name" content="Je ne peux quand même pas l'appeler !">
-        <meta property="og:image" content="./assets/img/logo.gif">
+        <meta property="og:image" content="<%= req.protocol + '://' + req.get('host') %>/assets/img/firstnamebasher.gif">
 		<% } else { %>
         <title>Mentions légales</title>
 		<% } %>
